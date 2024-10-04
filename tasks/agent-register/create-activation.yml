@@ -10,7 +10,7 @@
   when: "aws_ssm_activation_code is defined or aws_ssm_activation_id is defined"
 
 # Detecting the current AWS Region to use.
-- include: region-detect/main.yml
+- import_tasks: region-detect/main.yml
   when: aws_ssm_ec2_region is not defined
 
 # Creating a new IAM Managed policy to be attached to
